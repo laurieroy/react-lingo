@@ -3,9 +3,28 @@ This project is made in Reat 17, following a [tutorial](https://www.youtube.com/
 
 I plan on doing some updates to it, but I first wanted to see how he implemented the game.
 
-A user attempts to guess the five-letter word, with a maximum of six guesses. This is done by typing the word and hitting enter. If a letter is in the guess, but not in the correct location, it has a yellow background. If the letter is in the correct location, it has a green background. If the letter of the guessed word is not in the sample word, the background remains gray.
-The user types in the guess and hits enter to submit, typing on the keypad is not implemented. Duplicate guesses and words of less than 5 letters are not valid. Letters are tracked in the visual keypad at the bottom of the screen.
-The game ends when the user guess the sample word, or uses all six attempts at the word. A new word is served on page refresh.
+Game premise:
+A user attempts to guess the five-letter word, with a maximum of six guesses. The background color changes to inform the next guess. 
+
+How to Play:
+Player types a guess and hits `enter`. If a letter of the sample word is in the guess, but not in the correct location, it has a yellow background. If the letter is in the correct location, it has a green background. If the letter of the guessed word is not in the sample word, the background remains gray.
+
+- The user types in the guess and hits enter to submit, typing on the visual keypad is not implemented. 
+- Duplicate guesses and words of less than 5 letters are not valid. 
+- Letters are tracked in the visual keypad at the bottom of the screen.
+- The game ends when the user guesses the sample word, or uses all six attempts to guess the word. 
+- A new word is served on page refresh.
+
+Current source for words: json file using json server
+
+## To serve the solution words using json server:
+Install the server:
+`npm i -g json-server`
+
+Run the json file on port 3001 (assuming React is using 3000):
+`json-server ./data/db.json --port 3001`
+
+Sample endpoint:  http://localhost:3001/solutions
 
 # Getting Started with Create React App
 
