@@ -26,7 +26,7 @@ Run the json file on port 3001 (assuming React is using 3000):
 
 Sample endpoint:  http://localhost:3001/solutions
 
-
+New to Me: animations and making CSS variables (adding -- in front of property) and used by var(--background)
 
 ### TODO
 - account for duplicate letter cases (currently grey)
