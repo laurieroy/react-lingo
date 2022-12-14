@@ -9,6 +9,7 @@ function useWordle(solution) {
 
   // format 5-letter string into an array of letter objects
   function formatGuess(){
+    console.log("Formatting guess: ", currentGuess)
   }
   
   // add a new guess to guesses state
@@ -23,6 +24,26 @@ function useWordle(solution) {
   // handle keyup event & track current guess
   // if uses presses enter, add the new guess
   function handleKeyUp({key}){
+    if (key === 'Enter'){
+      // only add guess if turn is less than 5
+      if (turn > 5){
+        console.log("All guesses used")
+        return
+      }
+
+      // do not allow duplicate words
+      if (history.includes(currentGuess)){
+        console.log("You already tried that word!")
+        return
+      }
+
+      // check word is 5 chars long
+      if (currentGuess.length !== 5){
+        console.log("Guess word must be 5 chars long")
+        return
+      }
+      formatGuess()
+    }
 
     if (key === 'Backspace'){
       setCurrentGuess((prev)=>{
@@ -30,7 +51,7 @@ function useWordle(solution) {
       })
       return
     }
-    
+
     if(/^[A-Za-z]$/.test(key)){
       if (currentGuess.length < 5){
         setCurrentGuess((prev)=>{
