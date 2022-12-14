@@ -26,6 +26,11 @@ Run the json file on port 3001 (assuming React is using 3000):
 
 Sample endpoint:  http://localhost:3001/solutions
 
+
+
+### TODO
+- account for duplicate letter cases (currently grey)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
